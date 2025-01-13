@@ -4,11 +4,13 @@ def bubble_sort_asc(arr):
             if arr[i] > arr[i + 1]:
                 arr[i], arr[i + 1] = arr[i + 1], arr[i]
 
+
 def bubble_sort_desc(arr):
     for n in range(len(arr) - 1, 0, -1):
         for i in range(n):
             if arr[i] < arr[i + 1]:
                 arr[i], arr[i + 1] = arr[i + 1], arr[i]
+
 
 def bubble_sort_with_stop(arr):
     for n in range(len(arr) - 1, 0, -1):
@@ -17,8 +19,9 @@ def bubble_sort_with_stop(arr):
             if arr[i] > arr[i + 1]:
                 arr[i], arr[i + 1] = arr[i + 1], arr[i]
                 swapped = True
-        if (swapped == False):
+        if (swapped is False):
             break
+
 
 arr = [39, 12, 18, 85, 72, 10, 2, 18]
 arr2 = [39, 12, 18, 85, 72, 10, 2, 18]

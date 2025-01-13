@@ -16,16 +16,20 @@ dic_scenarios = {
 }
 
 # Function to check if a new test scenario already exists
-#If we want to see only exact matches:
+# If we want to see only exact matches:
+
+
 def check_exact_matches(test_name, new_steps, existing_scenarios):
     new_scenario = frozenset(new_steps)
     if new_scenario in existing_scenarios.values():
         duplicate = [key for key, value in existing_scenarios.items() if value == new_scenario]
         print('scenario already exists in the', duplicate)
     else:
-            print('it is new scenario')
+        print('it is new scenario')
 
-#If we want to see that such steps already exist in any of our scenarios:
+# If we want to see that such steps already exist in any of our scenarios:
+
+
 def check_scenario(test_name, new_steps, existing_scenarios):
     new_scenario = frozenset(new_steps)
     duplicate = []
@@ -33,9 +37,9 @@ def check_scenario(test_name, new_steps, existing_scenarios):
         if val.issuperset(new_scenario):
             duplicate.append(key)
     if duplicate:
-            print('scenario already exists in the', duplicate)
+        print('scenario already exists in the', duplicate)
     else:
-            print('it is new scenario')
+        print('it is new scenario')
 
 
 new_steps = ["open browser", "navigate to page", "click login"]  # Same steps as Test Case 1 and part of Test Case 3
